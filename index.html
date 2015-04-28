@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
@@ -63,3 +64,46 @@ $ git checkout gh-pages
   </body>
 </html>
 
+=======
+<html ng-app="ngUV">
+  <head>
+    <title>UV Data</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.9/angular-mocks.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller="uvCtrl" style="margin:5%;">
+
+    <table class="table">
+    	<thead>
+    		<th>Place</th>
+    		<th>Location</th>
+    		<th>Publish Time</th>
+    		<th>UVI</th>
+    		<th>Google Map</th>
+    	</thead>
+    	<tbody >
+			<tr ng-repeat="uv in UVdata"> 
+				<td> {{uv.place}} </td>
+				<td> {{uv.location}} </td>    		
+				<td> {{uv.time}} </td>    		
+				<td> {{uv.UVI}} </td>  
+				<td> <a href="{{uv.map}}" target="_blank">{{uv.map}}</a></td>
+			</tr>
+    	</tbody>
+    </table>
+  </body>
+</html>
+>>>>>>> master

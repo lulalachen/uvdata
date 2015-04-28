@@ -9,6 +9,7 @@ ngUV.controller('uvCtrl', ['$scope','$http', function ($scope, $http) {
 	$scope.UVdata = [];
 
 	$http.get(crossOrigin + url).success(function(data){
+		$('#in').scope().loadingStart();
 		angular.forEach(data, function(val){
 			$scope.UVdata.push({
 				"place" : val.County + val.SiteName,
@@ -18,7 +19,7 @@ ngUV.controller('uvCtrl', ['$scope','$http', function ($scope, $http) {
 				"map" : googleMap + $scope.locationConvert(val.TWD97Lat, val.TWD97Lon)
 			});
 		})
-		console.log($scope.UVdata);
+		$('#in').scope().loadingComplete();
 	})
 
 	$scope.locationConvert = function(latitute, longtitute){
@@ -36,4 +37,22 @@ ngUV.controller('uvCtrl', ['$scope','$http', function ($scope, $http) {
 		return location;
 	}
 
+	$scope.loading
+
+
 }])
+
+ngUV.directive("loadingIndicator", function() {
+    return {
+        restrict : "A",
+        
+        link : function(scope, element, attrs) {
+          scope.loadingStart = function() {
+            $('#in').fadeIn(); 
+          }
+          scope.loadingComplete = function() {
+            $('#in').fadeOut();
+          }
+        }
+    }
+});

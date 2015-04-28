@@ -32,8 +32,6 @@ ngUV.controller('uvCtrl', ['$scope','$http', function ($scope, $http) {
 		lonTemp = lonTemp[0] + '°' + lonTemp[1] + '\'' + lonTemp[2] + '\"';
 
 		location = latTemp + ' ' + lonTemp;
-		console.log(location)
-		location.replace('Â','poka');
 
 		return location;
 	}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html ng-app="ngUV">
+  <head>
+    <title></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <!-- Leaflet Css -->
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+	
+  <!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+    
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script  src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular-route.js"></script>
+	<script type="text/javascript" src="https://code.angularjs.org/1.3.9/angular-mocks.js"></script>
+  <!-- Leaflet Javascript -->
+  <script type="text/javascript" src="angular-leaflet/dist/angular-leaflet-directive.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+  <style type="text/css">
+    #map { height: 560px; }
+    .leaflet { height: 560px;}
+  </style>
+  </head>
+  <body ng-controller="ubikeCtrl">
+
+     <!-- <leaflet markers="markers" center="osloCenter" class="leaflet"></leaflet> -->
+    <div id="map"></div>
+   <!--  <iframe width='100%' height='500px' frameBorder='0' src='https://a.tiles.mapbox.com/v4/lulalachen.54c2dad5/attribution,zoompan,zoomwheel,geocoder,share.html?access_token=pk.eyJ1IjoibHVsYWxhY2hlbiIsImEiOiJFcHNzTGowIn0.36zcfsbBlcJ08KwIjzK2tA'></iframe> -->
+  	<h1>Ubike</h1>
+    <table class="table">
+      <thead>
+        <th>Place</th>
+        <th>Location</th>
+        <th>Vacancy</th>
+        <th>Query Time</th>
+        <!-- <th>Google Map</th> -->
+      </thead>
+      <tbody >
+      <tr ng-repeat="ubike in ubike"> 
+        <td> {{ubike.ar}} </td>
+        <td> {{ubike.lat}} {{ubike.lng}} </td>        
+        <td> {{ubike.sbi}} / {{ubike.tot}} </td>        
+        <td> {{ubike.mday}} </td>  
+        <!-- <td> <a href="{{uv.map}}" target="_blank">{{uv.map}}</a></td> -->
+      </tr>
+      </tbody>
+    </table>
+
+    <script type="text/javascript">
+   
+      // var map = L.map('map').setView([51.505, -0.09], 13);
+      // var ubikeGeoLocation = 
+
+      // console.log(ubikeGeoLocation);
+      // var map = L.map('map').setView([25.057866, 121.520711], 12);
+      // var accessToken = 'pk.eyJ1IjoibHVsYWxhY2hlbiIsImEiOiJFcHNzTGowIn0.36zcfsbBlcJ08KwIjzK2tA';
+      // var mapId = 'mapbox.light' || 'mapbox.streets' || 'mapbox.streets' ;
+      // var mapUrl = 'http://api.tiles.mapbox.com/v4/' + mapId + '/{z}/{x}/{y}.png?access_token='+ accessToken;
+      // // var mapUrl = 'http://api.tiles.mapbox.com/v4/mapbox.streets/{z}/{x}/{y}.png?access_token=' 
+      // //   + accessToken + '#18/25.057866/121.520711'
+
+      // L.tileLayer( mapUrl , {
+      //     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+      //     maxZoom: 18
+      // }).addTo(map);
+      // // 25.057866 121.520711
+      // // 'http://{s}.tiles.mapbox.com/v3/examples.map-zr0njcqy/{z}/{x}/{y}.png'
+      // // access_token=pk.eyJ1IjoibHVsYWxhY2hlbiIsImEiOiJFcHNzTGowIn0.36zcfsbBlcJ08KwIjzK2tA
+     
+      // var marker = L.marker([25.057866, 121.520711]).addTo(map);
+      // var popup = L.popup()
+      //   .setLatLng([25.057866, 121.520711])
+      //   .setContent("I am a standalone popup.")
+      //   .openOn(map);
+      // var circle = L.circle([25.057866, 121.520711], 500, {
+      //     color: 'red',
+      //     fillColor: '#f03',
+      //     fillOpacity: 0.5
+      // }).addTo(map); 
+      // var polygon = L.polygon([
+      //     [51.509, -0.08],
+      //     [51.503, -0.06],
+      //     [51.51, -0.047]
+      // ]).addTo(map);
+
+    </script>
+  
+  </body>
+</html>
